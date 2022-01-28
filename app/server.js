@@ -1,33 +1,24 @@
 var express = require('express');
+const morgan = require('morgan');
+const router = require('./routes');
+const movierouter = require('./movies');
+
 var app = express();
-var router = express.Router();
 
-var port = process.env.port  || 4800 ;
+app.use('/api', [router, movierouter]);
 
-router.get('/', function (req, res) {
-    res.json({ mensaje: '¡Hola Mundo again!' })
-})
+//middlewares
+app.use(morgan('combined'));
+//for json interpretation
+app.use(express.urlencoded({extended: true}))
+app.use(express.json(
+    {
+        limit: '5mb'
+    }
+));
 
-router.get('/cervezas', function (req, res) {
-    res.json({ mensaje: '¡A beber cerveza!' })
-})
-router.get('/test/:nombre', 
-    function (req, res, next) {
-        console.log('the response will be sent by the next function ...');
-        next();
-    }, function (req, res) {
-        res.send('Hello from ' + req.params.nombre);
-  });
-
-router.post('/', function (req, res) {
-    res.json({ mensaje: 'Método post' })
-})
-
-router.delete('/', function (req, res) {
-    res.json({ mensaje: 'Método delete' })
-})
-  
-app.use('/api', router);
+//servicio de la nube process.env.port sino el por defecto el 4800
+var port = process.env.port  || 4800; 
 // iniciamos nuestro servidor
 app.listen(port);
 
