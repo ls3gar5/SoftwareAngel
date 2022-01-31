@@ -1,11 +1,15 @@
 {
   "name": "NodeJs",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Test Node Js",
+  "main": "server.js",
+  "engines": {
+    "node": ">=16.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app/server.js"
+    "start": "nodemon app/server.js",
+    "staging": "./node_modules/.bin/nodemon --inspect app/server.js"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +17,9 @@
   "dependencies": {
     "body-parser": "^1.19.1",
     "express": "^4.17.2",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "underscore": "^1.13.2",
+    "cross-env": "^7.0.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
