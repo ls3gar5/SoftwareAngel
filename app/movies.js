@@ -9,7 +9,7 @@ const _ = require("underscore");
 //Expose routers
 router.get('/', (req, res) => {
     res.json({ movies: movies })
-    
+
 })
 
 router.post('/', (req, res) => 
@@ -45,6 +45,15 @@ router.delete('/:id', (req, res) => {
     });
 
     res.json('delete');
+})
+
+router.put('/:id', (req, res) => {
+    const {id} = req.params;
+    const {title, director, year, rating} = req.body;
+    var movie = {id, ...req.body};
+
+    movies.push(movie)
+    res.end();
 })
 
 module.exports = router;

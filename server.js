@@ -1,7 +1,8 @@
 var express = require('express');
 const morgan = require('morgan');
-const router = require('./routes');
-const movierouter = require('./movies');
+const router = require('./app/routes');
+const movierouter = require('./app/movies');
+const user = require('./app/users');
 
 var app = express();
 //middlewares
@@ -16,7 +17,7 @@ app.use(express.urlencoded({extended: true}))
 
 app.use('/api', router);
 app.use('/api/movies', movierouter);
-
+app.use('/api/users', user);
 
 
 
