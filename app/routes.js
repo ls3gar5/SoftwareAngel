@@ -4,7 +4,7 @@ var router = express.Router();
 
 //Expose routers
 router.get('/', function (req, res) {
-    res.json({ mensaje: '¡Hola Mundo again!' })
+    res.json({ mensaje: '¡Hola Mundo again! fgfgfg' })
 })
 
 router.get('/cervezas', function (req, res) {

@@ -10,7 +10,7 @@
     "build": "babel server.js -d dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app/server.js",
-    "staging": "./node_modules/.bin/nodemon server.js"
+    "postgres": "./node_modules/.bin/nodemon index.js"
   },
   "keywords": [],
   "author": "",
