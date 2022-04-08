@@ -1,8 +1,8 @@
 var express = require('express');
 const morgan = require('morgan');
-const router = require('./app/routes');
-const movierouter = require('./app/movies');
-const user = require('./app/users');
+const router = require('./routes');
+const movierouter = require('./movies');
+const user = require('./users');
 
 var app = express();
 //middlewares

@@ -2,12 +2,17 @@ var express = require('express');
 //routes
 var router = express.Router();
 
-const movies = require('./sample.json');
+const {getSample} = require('./sample');
 
 const _ = require("underscore");
 
+
+
 //Expose routers
 router.get('/', (req, res) => {
+
+    const movies = getSample;
+
     res.json({ movies: movies })
 
 })
