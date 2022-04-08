@@ -7,9 +7,10 @@
     "node": ">=16.x"
   },
   "scripts": {
-    "build": "babel server.js -d dist",
+    "build": "babel src -d dist",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app/server.js",
+    "start": "nodemon src/server.js",
+    "prod": "node dist/server.js",
     "postgres": "./node_modules/.bin/nodemon index.js"
   },
   "keywords": [],
