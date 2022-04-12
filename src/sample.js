@@ -11,7 +11,7 @@ function getSample() {
     
         },
         {
-            "id": "2",
+            "id": "1",
             "title": "The Dark Knight",
             "director":"Christopher Nolan",
             "year": "2008",
